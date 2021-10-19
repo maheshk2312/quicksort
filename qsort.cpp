@@ -1,3 +1,4 @@
+
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +16,7 @@ the pivot element at its correct position in sorted
 array, and places all smaller (smaller than pivot)
 to left of pivot and all greater elements to right
 of pivot */
-int partition (int arr[], int low, int high)
+int ArrayPartition (int arr[], int low, int high)
 {
 	int pivot = arr[high]; // pivot
 	int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
@@ -43,7 +44,7 @@ void quickSort(int arr[], int low, int high)
 	{
 		/* pi is partitioning index, arr[p] is now
 		at right place */
-		int pi = partition(arr, low, high);
+		int pi = ArrayPartition(arr, low, high);
 
 		// Separately sort elements before
 		// partition and after partition
