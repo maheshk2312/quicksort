@@ -1,9 +1,10 @@
+
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h>
 using namespace std;
 
 // A utility function to swap two elements 
-void swap(int* a, int* b) 
+void swapping(int* a, int* b) 
 { 
     int t = *a; 
     *a = *b; 
@@ -15,7 +16,7 @@ the pivot element at its correct position in sorted
 array, and places all smaller (smaller than pivot)
 to left of pivot and all greater elements to right
 of pivot */
-int partition (int arr[], int low, int high)
+int PartitionInArray (int arr[], int low, int high)
 {
 	int pivot = arr[high]; // pivot
 	int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
@@ -26,10 +27,10 @@ int partition (int arr[], int low, int high)
 		if (arr[j] < pivot)
 		{
 			i++; // increment index of smaller element
-			swap(&arr[i], &arr[j]);
+			swapping(&arr[i], &arr[j]);
 		}
 	}
-	swap(&arr[i + 1], &arr[high]);
+	swapping(&arr[i + 1], &arr[high]);
 	return (i + 1);
 }
 
@@ -43,7 +44,7 @@ void quickSort(int arr[], int low, int high)
 	{
 		/* pi is partitioning index, arr[p] is now
 		at right place */
-		int pi = partition(arr, low, high);
+		int pi = PartitionInArray(arr, low, high);
 
 		// Separately sort elements before
 		// partition and after partition
@@ -73,4 +74,4 @@ int main()
 	return 0;
 }
 
-// This code is contributed by rathbhupendra
+// This code is contributed by himA
